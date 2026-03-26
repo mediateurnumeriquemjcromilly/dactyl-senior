@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DactyloSenior — Apprendre à taper avec plaisir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⌨️</span>
+        <span class="logo-text">DactyloSenior</span>
+      </div>
+      <div class="header-stats">
+        <div class="stat-pill"><span class="stat-icon">⭐</span><span id="hdr-score">0</span> pts</div>
+        <div class="stat-pill"><span class="stat-icon">🔥</span><span id="hdr-streak">0</span> série</div>
+        <div class="stat-pill"><span class="stat-icon">✅</span><span id="hdr-words">0</span> mots</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main-container">
+
+    <!-- THEME SELECTOR -->
+    <section class="theme-section">
+      <h2 class="section-title">Choisissez votre thème</h2>
+      <div class="theme-grid" id="theme-grid">
+        <!-- injected by JS -->
+      </div>
+    </section>
+
+    <!-- LEVEL SELECTOR -->
+    <section class="level-section" id="level-section" style="display:none">
+      <h2 class="section-title" id="level-title">Choisissez votre niveau</h2>
+      <div class="level-cards" id="level-cards">
+        <!-- injected by JS -->
+      </div>
+    </section>
+
+    <!-- EXERCISE AREA -->
+    <section class="exercise-section" id="exercise-section" style="display:none">
+
+      <div class="exercise-topbar">
+        <button class="back-btn" id="back-btn">← Changer de thème</button>
+        <div class="progress-wrap">
+          <span class="progress-label" id="progress-label">Exercice 1 / 8</span>
+          <div class="progress-track">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+        </div>
+        <div class="stars-display" id="stars-display">☆☆☆</div>
+      </div>
+
+      <div class="exercise-card" id="exercise-card">
+
+        <!-- Image zone -->
+        <div class="image-zone">
+          <div class="image-frame">
+            <img id="exercise-img" src="" alt="" />
+          </div>
+          <p class="image-caption" id="image-caption"></p>
+        </div>
+
+        <!-- Word display -->
+        <div class="word-display" id="word-display"></div>
+
+        <!-- Input -->
+        <div class="input-zone">
+          <label class="input-label" for="typing-input">✍️ Tapez ici :</label>
+          <input
+            class="typing-input"
+            id="typing-input"
+            type="text"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="Commencez à taper…"
+          >
+        </div>
+
+        <div class="feedback-msg" id="feedback-msg"></div>
+
+        <div class="action-row">
+          <button class="btn btn-hint" id="hint-btn" onclick="showHint()">💡 Indice</button>
+          <button class="btn btn-skip" onclick="skipWord()">⏭ Passer</button>
+          <button class="btn btn-next primary" onclick="nextWord()">Mot suivant ▶</button>
+        </div>
+
+      </div>
+
+      <!-- Confetti layer -->
+      <div class="confetti-layer" id="confetti-layer"></div>
+    </section>
+
+    <!-- RESULTS SCREEN -->
+    <section class="results-section" id="results-section" style="display:none">
+      <div class="results-card">
+        <div class="results-trophy">🏆</div>
+        <h2 class="results-title">Bravo !</h2>
+        <p class="results-subtitle" id="results-subtitle"></p>
+        <div class="results-stats">
+          <div class="result-stat"><div class="result-val" id="res-score">0</div><div class="result-label">Points</div></div>
+          <div class="result-stat"><div class="result-val" id="res-words">0</div><div class="result-label">Mots réussis</div></div>
+          <div class="result-stat"><div class="result-val" id="res-streak">0</div><div class="result-label">Meilleure série</div></div>
+        </div>
+        <div class="results-actions">
+          <button class="btn primary" onclick="restartLevel()">🔄 Recommencer</button>
+          <button class="btn" onclick="goHome()">🏠 Accueil</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>DactyloSenior — Apprendre à taper, à son rythme 💙</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
