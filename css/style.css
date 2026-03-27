@@ -197,8 +197,8 @@ body {
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 2px solid var(--c-border);
-  width: 260px;
-  height: 180px;
+  width: 420px;
+  height: 290px;
 }
 .image-frame img {
   width: 100%;
@@ -358,7 +358,7 @@ body {
   html { font-size: 16px; }
   .level-cards { grid-template-columns: 1fr; }
   .exercise-card { padding: 18px 14px; }
-  .image-frame { width: 220px; height: 155px; }
+  .image-frame { width: 340px; height: 220px; }
   .letter-box { min-width: 34px; height: 46px; font-size: 22px; }
   .typing-input { font-size: 20px; }
   .results-stats { gap: 20px; }
